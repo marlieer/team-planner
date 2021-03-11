@@ -1,8 +1,8 @@
-@extends('layout)
+@extends('layout')
 
 @section('content')
 
-    <table>
+    <table class="table table-hover">
         <tr>
             <th>Name</th>
             <th>Position</th>
@@ -13,6 +13,9 @@
             <tr>
                 <td>{{ $teamMember->name }}</td>
                 <td>{{ $teamMember->position }}</td>
+                <td>{{ $teamMember->years_with_signifly }}</td>
+                <td><a href="{{ route('team_member.show', ['team_member' => $teamMember]) }}">View</a></td>
             </tr>
+        @endforeach
     </table>
 @endsection
