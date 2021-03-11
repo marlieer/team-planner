@@ -20,7 +20,7 @@ class CreateTeamMembersTable extends Migration
             $table->string('position');
             $table->text('bio');
             $table->integer('years_with_signifly');
-            $table->string('phone');
+            $table->string('phone')->nullable();
             $table->string('email');
             $table->string('profile_image');
             $table->timestamps();
