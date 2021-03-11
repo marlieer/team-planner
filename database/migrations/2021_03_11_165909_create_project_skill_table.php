@@ -15,9 +15,11 @@ class CreateProjectSkillTable extends Migration
     {
         Schema::create('project_skill', function (Blueprint $table) {
             $table->bigInteger('project_id');
-            $table->foreign('project_id')->references('id')->on('projects')->onDelete('cascade');
             $table->bigInteger('skill_id');
+            $table->primary(['skill_id', 'project_id']);
+            $table->foreign('project_id')->references('id')->on('projects')->onDelete('cascade');
             $table->foreign('skill_id')->references('id')->on('skills')->onDelete('cascade');
+            $table->boolean('is_required')->default('false');
             $table->timestamps();
         });
     }

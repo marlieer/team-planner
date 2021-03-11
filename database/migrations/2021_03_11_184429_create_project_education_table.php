@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateProjectTeamMemberTable extends Migration
+class CreateProjectEducationTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,13 @@ class CreateProjectTeamMemberTable extends Migration
      */
     public function up()
     {
-        Schema::create('project_team_member', function (Blueprint $table) {
-            $table->bigInteger('team_member_id');
+        Schema::create('project_education', function (Blueprint $table) {
+            $table->bigInteger('education_id');
             $table->bigInteger('project_id');
-            $table->primary(['project_id', 'team_member_id']);
-            $table->foreign('team_member_id')->references('id')->on('team_members')->onDelete('cascade');
+            $table->foreign('education_id')->references('id')->on('education')->onDelete('cascade');
             $table->foreign('project_id')->references('id')->on('projects')->onDelete('cascade');
-            $table->boolean('is_project_manager')->default('false');
+            $table->primary(['education_id', 'project_id']);
+            $table->boolean('is_required')->default('false');
             $table->timestamps();
         });
     }
@@ -31,6 +31,6 @@ class CreateProjectTeamMemberTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('project_team_member');
+        Schema::dropIfExists('project_education');
     }
 }

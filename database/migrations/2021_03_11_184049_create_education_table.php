@@ -15,6 +15,11 @@ class CreateEducationTable extends Migration
     {
         Schema::create('education', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('team_member_id');
+            $table->foreign('team_member_id')->references('id')->on('team_members')->onDelete('cascade');
+            $table->string('type');
+            $table->string('subject');
+            $table->string('school');
             $table->timestamps();
         });
     }

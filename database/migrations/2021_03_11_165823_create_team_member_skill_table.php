@@ -15,9 +15,10 @@ class CreateTeamMemberSkillTable extends Migration
     {
         Schema::create('team_member_skill', function (Blueprint $table) {
             $table->bigInteger('team_member_id');
-            $table->foreign('team_member_id')->references('id')->on('team_members')->onDelete('cascade');
             $table->bigInteger('skill_id');
+            $table->foreign('team_member_id')->references('id')->on('team_members')->onDelete('cascade');
             $table->foreign('skill_id')->references('id')->on('skills')->onDelete('cascade');
+            $table->primary(['team_member_id', 'skill_id']);
             $table->timestamps();
         });
     }
