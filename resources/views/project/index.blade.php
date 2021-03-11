@@ -11,7 +11,7 @@
             <tr>
                 <td>{{ $project->title }}</td>
                 <td>{{ $project->client }}</td>
-                <td><a href="{{route('project.show', ['id' => $project->id])}}">View</a></td>
+                <td><a href="{{route('project.show', ['project' => $project])}}">View</a></td>
             </tr>
         @endforeach
     </table>
