@@ -7,8 +7,17 @@ use Illuminate\Database\Eloquent\Model;
 class TeamMember extends Model
 {
     protected $fillable = [
-        'name', 'education', 'years_with_signifly', 'phone', 'email', 'profile_image'
+        'name', 'bio', 'job_title', 'years_with_signifly', 'phone', 'email', 'profile_image'
     ];
+
+
+    /**
+     * The education that the team member has.
+     */
+    public function education()
+    {
+        return $this->hasMany('App\Education');
+    }
 
 
     /**
