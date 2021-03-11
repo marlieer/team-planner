@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreProject;
 use App\Project;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,7 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        //
+        return view('project/index', [$projects = Project::all()]);
     }
 
     /**
@@ -24,7 +25,7 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        //
+        return view('project/create');
     }
 
     /**
@@ -33,9 +34,10 @@ class ProjectController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreProject $request)
     {
-        //
+        $validated = $request->validated();
+        Project::create($validated);
     }
 
     /**
@@ -46,7 +48,7 @@ class ProjectController extends Controller
      */
     public function show(Project $project)
     {
-        //
+        return view('project/show', [$project]);
     }
 
     /**
@@ -80,6 +82,7 @@ class ProjectController extends Controller
      */
     public function destroy(Project $project)
     {
-        //
+        Project::destroy($project->id);
+        return redirect()->route('project.index');
     }
 }
