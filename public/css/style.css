@@ -1,0 +1,12 @@
+.create-project {
+    /*display: table;*/
+    /*text-align: center;*/
+}
+
+.create-project-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 40%;
+    left: 40%;
+    width: 20%;
+}

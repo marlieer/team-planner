@@ -77,11 +77,11 @@
         <div class="container">
             @yield('content')
         </div>
-        <div class="container create-project-btn">
-            <a href="{{route('project.create')}}" class="btn btn-success">Create New Project</a>
-        </div>
     </div>
 </main>
+<div class="create-project">
+    <a href="{{route('project.create')}}" class="btn btn-success create-project-btn">Create New Project</a>
+</div>
 </body>
 </html>
 
