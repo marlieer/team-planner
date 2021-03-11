@@ -1,25 +1,23 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+## Team Planner
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+By Marlie Dueck
 
-## About Laravel
+Team Planner is a simple app which allows the user to create a project requiring specific skills and competencies. The app performs a calculation to determine how good the fit is and suggests the best suited team members to join the project.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+### Steps to Create the Project
+1. Create a Laravel project using composer
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+        composer create-project --prefer-dist laravel/laravel:^7.0 team-planner
+2. Configure Homestead virtual machine for the development environment. Follow the [Laravel documentation](https://laravel.com/docs/7.x/homestead) to install Homestead requirements. To start the virtual machine, run the following command:
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+        vagrant up
+3. Create a .env file and set the environment variables in to connect to the database. Also set the APP_NAME and APP_URL variables.
+
+4. If the APP_KEY is not already set, run the following command from within Homestead at the project root:
+
+        php artisan key:generate
+
+
 
 ## Learning Laravel
 
