@@ -13,7 +13,7 @@ class StoreProject extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,9 @@ class StoreProject extends FormRequest
     public function rules()
     {
         return [
-            //
+            'title' => 'string',
+            'description' => 'string',
+            'client' => 'string',
         ];
     }
 }
