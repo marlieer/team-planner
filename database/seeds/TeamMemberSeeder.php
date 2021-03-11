@@ -1,9 +1,9 @@
 <?php
 
 use App\Education;
+use App\Skill;
 use App\TeamMember;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
 
 class TeamMemberSeeder extends Seeder
 {
@@ -36,6 +36,22 @@ class TeamMemberSeeder extends Seeder
                 'subject' => 'Business Administration & Organisational Communication',
                 'school' => 'Copenhagen Business School'
             ])
+        ]);
+
+        $teamMember->skills()->saveMany([
+            new Skill([
+                'name' => 'strategic communication',
+                'category' => 'Consultant',
+            ]),
+            new Skill([
+                'name' => 'personnel management',
+                'category' => 'Consultant',
+            ]),
+            new Skill([
+                'name' => 'project management',
+                'category' => 'Consultant',
+            ]),
+
         ]);
 
         $teamMember->push();

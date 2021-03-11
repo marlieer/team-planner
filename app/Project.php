@@ -25,7 +25,7 @@ class Project extends Model
      */
     public function education()
     {
-        return $this->belongsToMany('App\Education')->withPivot('is_required');
+        return $this->belongsToMany('App\Education', 'project_education')->withPivot('is_required');
     }
 
 

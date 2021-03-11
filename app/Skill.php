@@ -16,7 +16,7 @@ class Skill extends Model
      */
     public function teamMembers()
     {
-        return $this->belongsToMany('App\TeamMember');
+        return $this->belongsToMany('App\TeamMember', 'team_member_skill');
     }
 
 

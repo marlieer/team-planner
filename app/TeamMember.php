@@ -34,6 +34,6 @@ class TeamMember extends Model
      */
     public function skills()
     {
-        return $this->belongsToMany('App\Skill');
+        return $this->belongsToMany('App\Skill', 'team_member_skill');
     }
 }
