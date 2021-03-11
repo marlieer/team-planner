@@ -14,3 +14,5 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::resource('project', 'ProjectController');
+Route::resource('team_member', 'TeamMemberController');
+Route::resource('skill', 'SkillController');
