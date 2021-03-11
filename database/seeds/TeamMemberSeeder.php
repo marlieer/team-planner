@@ -23,7 +23,7 @@ class TeamMemberSeeder extends Seeder
             'years_with_signifly' => 10,
             'phone' => '+45 4031 2498',
             'email' => 'plr@signifly.com',
-            'profile_image' => '/resources/images/profiles/patrick_ronning.jpg'
+            'profile_image' => '/images/profiles/patrick_ronning.jpg'
         ]);
 
         $teamMember->education()->saveMany([
@@ -67,7 +67,7 @@ class TeamMemberSeeder extends Seeder
             'years_with_signifly' => 5,
             'phone' => '+45 2785 1529',
             'email' => 'mk@signifly.com',
-            'profile_image' => '/resources/images/profiles/mads_kjaergaard.jpg'
+            'profile_image' => '/images/profiles/mads_kjaergaard.jpg'
         ]);
 
         $teamMember->education()->saveMany([
@@ -106,7 +106,7 @@ class TeamMemberSeeder extends Seeder
             'years_with_signifly' => 6,
             'phone' => '+(438) 866-1336',
             'email' => 'nr@signifly.com',
-            'profile_image' => '/resources/images/profiles/nicklas_ronning.jpg'
+            'profile_image' => '/images/profiles/nicklas_ronning.jpg'
         ]);
 
         $teamMember->education()->saveMany([
@@ -149,7 +149,7 @@ class TeamMemberSeeder extends Seeder
             'years_with_signifly' => 5,
             'phone' => '514-984-7325',
             'email' => 'jm@signifly.com',
-            'profile_image' => '/resources/images/profiles/john_mongeau.jpg'
+            'profile_image' => '/images/profiles/john_mongeau.jpg'
         ]);
 
         $teamMember->education()->saveMany([
@@ -193,7 +193,7 @@ class TeamMemberSeeder extends Seeder
             'years_with_signifly' => 1,
             'phone' => '+45 53 66 94 44',
             'email' => 'tl@signifly.com',
-            'profile_image' => '/resources/images/profiles/tobias_lindhardt.jpg'
+            'profile_image' => '/images/profiles/tobias_lindhardt.jpg'
         ]);
 
         $teamMember->skills()->saveMany([
@@ -218,7 +218,7 @@ class TeamMemberSeeder extends Seeder
             'bio' => "Hans joined Signifly in March 2021 and brings 20+ years of Sales and Marketing experience. He thrives at the intersection of creativity, tech, design, and business – making him a natural fit for the Signifly approach and a huge asset to our ambitious clientele.\nBefore joining us, Hans worked as a consultant for 15 years, and today, he helps Signifly attract exciting business partnerships and scope innovative business solutions. His passion is driven by real impact and anchored in people, whether that means driving behavioral change in consumers or making tech more accessible.\nOutside the office, Hans keeps busy mountain biking, cheering on Liverpool FC, running, and riding his motorcycle on sunny days.",
             'years_with_signifly' => 0,
             'email' => 'ht@signifly.com',
-            'profile_image' => '/resources/images/profiles/no_photo.jfif'
+            'profile_image' => '/images/profiles/no_photo.jfif'
         ]);
 
         $teamMember->education()->saveMany([
@@ -256,7 +256,7 @@ class TeamMemberSeeder extends Seeder
             'bio' => "Charlie joined the Canadian team in 2020 as a junior consultant. After previously working in communications, Charlie is now helping us find new opportunities for Signifly. Charlie is one of our high potential personnel here at Signifly and has already demonstrated his ability for forward thinking and problem solving in many of the projects.\nWhen he is not hard at work for us, Charlie is earning a degree in economics at McGill University or pursuing his passion for photography.",
             'years_with_signifly' => 1,
             'email' => 'cc@signifly.com',
-            'profile_image' => '/resources/images/profiles/no_photo.jfif'
+            'profile_image' => '/images/profiles/no_photo.jfif'
         ]);
 
         $teamMember->education()->saveMany([
@@ -286,7 +286,7 @@ class TeamMemberSeeder extends Seeder
             'years_with_signifly' => 2,
             'phone' => '+45 2478 8291',
             'email' => 'ha@signifly.com',
-            'profile_image' => '/resources/images/profiles/hedvig_aanesen.jpg'
+            'profile_image' => '/images/profiles/hedvig_aanesen.jpg'
         ]);
 
         $teamMember->education()->saveMany([
@@ -325,7 +325,7 @@ class TeamMemberSeeder extends Seeder
             'years_with_signifly' => 2,
             'phone' => '+45 4093 8119',
             'email' => 'sb@signifly.com',
-            'profile_image' => '/resources/images/profiles/sara_friis_bache.jpg'
+            'profile_image' => '/images/profiles/sara_friis_bache.jpg'
         ]);
 
         $teamMember->education()->saveMany([
@@ -364,7 +364,7 @@ class TeamMemberSeeder extends Seeder
             'bio' => "With over 9 years of experience in communications and marketing, Katherine has joined the Canadian Signifly team in 2019 as an Innovation Lead. She is passionate about how brands can innovate their digital presence through storytelling and emotion-based narratives.\nKathrine holds a master’s degree in Strategic Communications from the University of Copenhagen, which she uses as the foundation for her excellent brand storytelling and UX writing skills.",
             'years_with_signifly' => 2,
             'email' => 'keb@signifly.com',
-            'profile_image' => '/resources/images/profiles/kathrine_elvira_boysen.jpg'
+            'profile_image' => '/images/profiles/kathrine_elvira_boysen.jpg'
         ]);
 
         $teamMember->education()->saveMany([
@@ -412,7 +412,7 @@ class TeamMemberSeeder extends Seeder
             'years_with_signifly' => 1,
             'phone' => '+45 2478 8291',
             'email' => 'tj@signifly.com',
-            'profile_image' => '/resources/images/profiles/tobias_jorgensen.jpg'
+            'profile_image' => '/images/profiles/tobias_jorgensen.jpg'
         ]);
 
         $teamMember->education()->saveMany([
@@ -442,7 +442,7 @@ class TeamMemberSeeder extends Seeder
             'bio' => "Bringing with her experience from over 11 years in the media and lifestyle industry, Mathilde joined Signifly in October 2020 to help clients achieve ambitious goals and unleash their full digital potential. Her extensive education and experiences in digital project management, community management, and journalism have helped her develop a well-rounded portfolio, and she excels in projects dealing with product development, content strategy, and digital development.\nFurthermore, her dedicated, active approach to work doesn't just stay in the office. Mathilde also loves to keep active by running, sailing, and skiing - and she even founded one of Copenhagen's largest running communities, adidas runners Copenhagen.",
             'years_with_signifly' => 1,
             'email' => 'mi@signifly.com',
-            'profile_image' => '/resources/images/profiles/no_photo.jfif'
+            'profile_image' => '/images/profiles/no_photo.jfif'
         ]);
 
         $teamMember->skills()->saveMany([
@@ -472,7 +472,7 @@ class TeamMemberSeeder extends Seeder
             'bio' => "Viktoria joined Signifly in November 2020 to help our Norwegian clients unleash their full digital potential. Her eye for detail, experience in digital marketing and project management, and enthusiasm for digital innovation allow her to translate unique business opportunities into well-executed plans. Simply supply coffee and let her elevate your brand.\nToday, she helps serve our clients through concepting engaging content, planning campaigns, and overseeing various aspects in the project pipeline while she completes her graduate studies in Business Administration and E-business at CBS.\nWhen she's not behind her desk, you might find Viktoria binging the newest Netflix cooking show - but you won't find her hitting the slopes anytime soon. Despite hailing from Norway, Viktoria tends to shy away from the winter sports, kicking the old stereotype to the side in favor of something a bit sunnier.",
             'years_with_signifly' => 0,
             'email' => 'vj@signifly.com',
-            'profile_image' => '/resources/images/profiles/no_photo.jfif'
+            'profile_image' => '/images/profiles/no_photo.jfif'
         ]);
 
         $teamMember->education()->saveMany([
