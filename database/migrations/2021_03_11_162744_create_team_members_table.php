@@ -17,6 +17,7 @@ class CreateTeamMembersTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('job_title');
+            $table->string('job_category');
             $table->text('bio');
             $table->integer('years_with_signifly');
             $table->string('phone');
