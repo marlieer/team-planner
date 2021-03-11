@@ -13,6 +13,6 @@ $factory->define(TeamMember::class, function (Faker $faker) {
         'years_with_signifly' => $faker->numberBetween(0, 10),
         'phone' => $faker->phoneNumber,
         'email' => $faker->companyEmail,
-        'profile_image' => ''
+        'profile_image' => '/images/profiles/tobias_jorgensen.jpg'
     ];
 });
