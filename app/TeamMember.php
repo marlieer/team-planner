@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class TeamMember extends Model
 {
     protected $fillable = [
-        'name', 'bio', 'job_title', 'job_category', 'years_with_signifly', 'phone', 'email', 'profile_image'
+        'name', 'bio', 'job_title', 'position', 'years_with_signifly', 'phone', 'email', 'profile_image'
     ];
 
 

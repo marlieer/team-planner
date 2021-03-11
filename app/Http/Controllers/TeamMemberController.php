@@ -14,7 +14,7 @@ class TeamMemberController extends Controller
      */
     public function index()
     {
-        //
+        return view('teamMembers/index', ['teamMembers' => TeamMember::all()]);
     }
 
     /**
