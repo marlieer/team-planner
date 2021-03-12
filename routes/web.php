@@ -12,7 +12,9 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::get('/', function() {
+    return redirect()->route('project.index');
+});
 Route::resource('project', 'ProjectController');
 Route::resource('team_member', 'TeamMemberController');
 Route::resource('skill', 'SkillController');

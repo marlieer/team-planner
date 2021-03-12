@@ -35,11 +35,11 @@
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
                     <a href="{{ route('project.index') }}"
-                       class="nav-link {{$_SERVER['REQUEST_URI'] == '/project' ? ' active' : ''}}">Projects</a>
+                       class="nav-link">Projects</a>
                 </li>
                 <li class="nav-item">
                     <a href="{{ route('team_member.index') }}"
-                       class="nav-link {{$_SERVER['REQUEST_URI'] == '/team_member' ? ' active' : ''}}">Signifly Team</a>
+                       class="nav-link ">Signifly Team</a>
                 </li>
             </ul>
 
