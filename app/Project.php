@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Project extends Model
 {
     protected $fillable = [
-        'title', 'description', 'client'
+        'title', 'description', 'client', 'minimum_years_with_signifly'
     ];
 
 
@@ -67,12 +67,13 @@ class Project extends Model
      */
     public function getCandidates()
     {
-        $unmet_skills_ids = $this->getSkillsStillNeeded()->pluck('id');
+        $unmet_skills_ids = $this->getUnmetSkills()->pluck('id');
 
-        // Reject all candidates who are already part of the team
+        // Reject all candidates who are already part of the team or do not meet the minimum years
+        // with Signifly requirement for the project
         // Then filter team members to get all candidates with one or more matching skill.
         // Then sort by number of skills matched
-        return TeamMember::all()
+        return TeamMember::where('years_with_signifly','>=', $this->minimum_years_with_signifly)->get()
             ->reject( function ($candidate) {
                 return $this->teamMembers->pluck('id')->has($candidate->id);
             })
@@ -93,12 +94,12 @@ class Project extends Model
         // fill education requirements
         if ($this->education) {
             $this->education->each(function ($education) {
-                $this->teamMembers()->save(TeamMember::where('id', $education->team_member_id)->first());
+                $this->teamMembers()->save(TeamMember::find($education->team_member_id));
             });
         }
 
         // while there are still skills on this project that haven't been met
-        while($this->getUnmetSkills()->isNotEmpty())
+        while($this->getUnmetSkills()->isNotEmpty() and $this->getCandidates()->isNotEmpty())
         {
             // take the candidate with the most matching skills and add to the project
             $this->teamMembers()->save($this->getCandidates()->pop());

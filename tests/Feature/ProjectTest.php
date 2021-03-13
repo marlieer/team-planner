@@ -129,7 +129,8 @@ class ProjectTest extends TestCase
 
 
     /**
-     * test that a project with required skills/education will be assigned
+     * test that a project with required skills/education/
+     * minimum years with signifly will be assigned
      * team members to fill those requirements
      */
     public function testProjectFillsRequirements()
@@ -149,13 +150,17 @@ class ProjectTest extends TestCase
         $used_skills = DB::table('team_member_skill')->get()->pluck('skill_id');
         Skill::whereNotIn('id', $used_skills)->delete();
 
-        // create a project that has certain skill/education/year with signifly requirements
-        $project = factory('App\Project')->create();
+        // create a project that has certain skill/education/years with signifly requirements
+        $project = factory('App\Project')->create([
+            'minimum_years_with_signifly' => 3,
+        ]);
         $project->skills()->saveMany(Skill::all()->random(5), ['is_required' => true]);
         $project->education()->saveMany(Education::all()->random(2), ['is_required' => true]);
 
+
         // assign team members to the project
         $project->assignTeamMembers();
+
 
         // assert that the education requirements of the project are met
         $this->assertDatabaseHas('project_team_member', [
@@ -165,5 +170,10 @@ class ProjectTest extends TestCase
 
         // assert that the skill requirements of the project are met
         $this->assertTrue($project->getUnmetSkills()->isEmpty());
+
+        // assert that the years with signifly requirement is met
+        $this->assertTrue($project->teamMembers->every(function ($team_member) use ($project) {
+            return $team_member->years_with_signifly >= $project->minimum_years_with_signifly;
+        }));
     }
 }

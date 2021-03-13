@@ -18,6 +18,7 @@ class CreateProjectsTable extends Migration
             $table->string('title');
             $table->text('description')->nullable();
             $table->string('client')->nullable();
+            $table->integer('minimum_years_with_signifly')->default(0);
             $table->timestamps();
         });
     }
