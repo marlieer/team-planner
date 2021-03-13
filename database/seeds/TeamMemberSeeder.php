@@ -40,19 +40,9 @@ class TeamMemberSeeder extends Seeder
         ]);
 
         $teamMember->skills()->saveMany([
-            new Skill([
-                'name' => 'strategic communication',
-                'category' => 'Consultant',
-            ]),
-            new Skill([
-                'name' => 'personnel management',
-                'category' => 'Consultant',
-            ]),
-            new Skill([
-                'name' => 'project management',
-                'category' => 'Consultant',
-            ]),
-
+            Skill::firstWhere('name', 'project management'),
+            Skill::firstWhere('name', 'strategic communication'),
+            Skill::firstWhere('name', 'personnel management'),
         ]);
 
         $teamMember->push();
@@ -79,19 +69,9 @@ class TeamMemberSeeder extends Seeder
         ]);
 
         $teamMember->skills()->saveMany([
-            new Skill([
-                'name' => 'strategic communication',
-                'category' => 'Consultant',
-            ]),
-            new Skill([
-                'name' => 'marketing',
-                'category' => 'Consultant',
-            ]),
-            new Skill([
-                'name' => 'sales',
-                'category' => 'Consultant',
-            ]),
-
+            Skill::firstWhere('name', 'marketing'),
+            Skill::firstWhere('name', 'strategic communication'),
+            Skill::firstWhere('name', 'sales'),
         ]);
 
         $teamMember->push();
@@ -123,22 +103,13 @@ class TeamMemberSeeder extends Seeder
         ]);
 
         $teamMember->skills()->saveMany([
-            new Skill([
-                'name' => 'strategic communication',
-                'category' => 'Consultant',
-            ]),
-            new Skill([
-                'name' => 'marketing',
-                'category' => 'Consultant',
-            ]),
-            new Skill([
-                'name' => 'sales',
-                'category' => 'Consultant',
-            ]),
-
+            Skill::firstWhere('name', 'marketing'),
+            Skill::firstWhere('name', 'strategic communication'),
+            Skill::firstWhere('name', 'sales'),
         ]);
 
         $teamMember->push();
+
 
         // John
         $teamMember = TeamMember::create([
@@ -166,19 +137,9 @@ class TeamMemberSeeder extends Seeder
         ]);
 
         $teamMember->skills()->saveMany([
-            new Skill([
-                'name' => 'strategic communication',
-                'category' => 'Consultant',
-            ]),
-            new Skill([
-                'name' => 'law',
-                'category' => 'Consultant',
-            ]),
-            new Skill([
-                'name' => 'sales',
-                'category' => 'Consultant',
-            ]),
-
+            Skill::firstWhere('name', 'law'),
+            Skill::firstWhere('name', 'strategic communication'),
+            Skill::firstWhere('name', 'sales'),
         ]);
 
         $teamMember->push();
@@ -197,14 +158,8 @@ class TeamMemberSeeder extends Seeder
         ]);
 
         $teamMember->skills()->saveMany([
-            new Skill([
-                'name' => 'strategic communication',
-                'category' => 'Consultant',
-            ]),
-            new Skill([
-                'name' => 'startups',
-                'category' => 'Consultant',
-            ]),
+            Skill::firstWhere('name', 'strategic communication'),
+            Skill::firstWhere('name', 'startups'),
         ]);
 
         $teamMember->push();
@@ -230,19 +185,9 @@ class TeamMemberSeeder extends Seeder
         ]);
 
         $teamMember->skills()->saveMany([
-            new Skill([
-                'name' => 'strategic communication',
-                'category' => 'Consultant',
-            ]),
-            new Skill([
-                'name' => 'marketing',
-                'category' => 'Consultant',
-            ]),
-            new Skill([
-                'name' => 'sales',
-                'category' => 'Consultant',
-            ]),
-
+            Skill::firstWhere('name', 'marketing'),
+            Skill::firstWhere('name', 'strategic communication'),
+            Skill::firstWhere('name', 'sales'),
         ]);
 
         $teamMember->push();
@@ -268,10 +213,7 @@ class TeamMemberSeeder extends Seeder
         ]);
 
         $teamMember->skills()->saveMany([
-            new Skill([
-                'name' => 'strategic communication',
-                'category' => 'Consultant',
-            ]),
+            Skill::firstWhere('name', 'strategic communication')
         ]);
 
         $teamMember->push();
@@ -298,19 +240,9 @@ class TeamMemberSeeder extends Seeder
         ]);
 
         $teamMember->skills()->saveMany([
-            new Skill([
-                'name' => 'strategic communication',
-                'category' => 'Consultant',
-            ]),
-            new Skill([
-                'name' => 'project manager',
-                'category' => 'Innovation',
-            ]),
-            new Skill([
-                'name' => 'repositioning',
-                'category' => 'Innovation',
-            ]),
-
+            Skill::firstWhere('name', 'repositioning'),
+            Skill::firstWhere('name', 'strategic communication'),
+            Skill::firstWhere('name', 'project manager'),
         ]);
 
         $teamMember->push();
@@ -342,15 +274,8 @@ class TeamMemberSeeder extends Seeder
         ]);
 
         $teamMember->skills()->saveMany([
-            new Skill([
-                'name' => 'project manager',
-                'category' => 'Innovation',
-            ]),
-            new Skill([
-                'name' => 'planning',
-                'category' => 'Innovation',
-            ]),
-
+            Skill::firstWhere('name', 'project manager'),
+            Skill::firstWhere('name', 'planning'),
         ]);
 
         $teamMember->push();
@@ -381,23 +306,10 @@ class TeamMemberSeeder extends Seeder
         ]);
 
         $teamMember->skills()->saveMany([
-            new Skill([
-                'name' => 'strategic communication',
-                'category' => 'Consultant',
-            ]),
-            new Skill([
-                'name' => 'marketing',
-                'category' => 'Consultant',
-            ]),
-            new Skill([
-                'name' => 'storytelling',
-                'category' => 'Innovation',
-            ]),
-            new Skill([
-                'name' => 'UX',
-                'category' => 'Designer',
-            ]),
-
+            Skill::firstWhere('name', 'strategic communication'),
+            Skill::firstWhere('name', 'marketing'),
+            Skill::firstWhere('name', 'digital design'),
+            Skill::firstWhere('name', 'storytelling'),
         ]);
 
         $teamMember->push();
@@ -424,11 +336,7 @@ class TeamMemberSeeder extends Seeder
         ]);
 
         $teamMember->skills()->saveMany([
-            new Skill([
-                'name' => 'risk management',
-                'category' => 'Innovation',
-            ]),
-
+            Skill::firstWhere('name', 'risk management'),
         ]);
 
         $teamMember->push();
@@ -446,19 +354,10 @@ class TeamMemberSeeder extends Seeder
         ]);
 
         $teamMember->skills()->saveMany([
-            new Skill([
-                'name' => 'journalism',
-                'category' => 'Innovation',
-            ]),
-            new Skill([
-                'name' => 'project manager',
-                'category' => 'Innovation',
-            ]),
-            new Skill([
-                'name' => 'community manager',
-                'category' => 'Innovation',
-            ]),
 
+            Skill::firstWhere('name', 'journalism'),
+            Skill::firstWhere('name', 'project management'),
+            Skill::firstWhere('name', 'personnel management'),
         ]);
 
         $teamMember->push();
@@ -484,21 +383,376 @@ class TeamMemberSeeder extends Seeder
         ]);
 
         $teamMember->skills()->saveMany([
-            new Skill([
-                'name' => 'digital marketing',
-                'category' => 'Innovation',
-            ]),
-            new Skill([
-                'name' => 'project manager',
-                'category' => 'Innovation',
-            ]),
-            new Skill([
-                'name' => 'planning',
-                'category' => 'Innovation',
-            ]),
+            Skill::firstWhere('name', 'digital marketing'),
+            Skill::firstWhere('name', 'project management'),
+            Skill::firstWhere('name', 'planning'),
+        ]);
 
+        $teamMember->push();
+
+
+        // malthe
+        $teamMember = TeamMember::create([
+            'name' => 'Malthe Mogensen',
+            'job_title' => 'Director of Strategy',
+            'position' => 'Strategist',
+            'bio' => "Malthe joined the team in early 2018. Malthe is a creative strategist who believes in the efficiency of creativity and resents the idea of choosing one or the other. As Director of Strategy, he is responsible for the manifestation of our mindset and method ‘innovate by doing’ – an entrepreneurial approach to digital strategy.\nMalthe holds a bachelor's in Business Communication & Economics and a master's in Political Communication & Management from Copenhagen Business School.\nSince his arrival, he has been the mind behind projects such as #Proudtobesiemens, STUcK in Sønderjylland, the transformation of Kriminalforsorgen, and a number of signal mining experiments.",
+            'years_with_signifly' => 3,
+            'phone' => '+45 5090 3474',
+            'email' => 'mm@signifly.com',
+            'profile_image' => '/images/profiles/malthe_mogensen.jpg'
+        ]);
+
+        $teamMember->education()->saveMany([
+            new Education([
+                'type' => 'Bachelor',
+                'subject' => 'Business Communication & Economics',
+                'school' => 'Copenhagen Business School'
+            ]),
+            new Education([
+                'type' => 'Masters',
+                'subject' => 'Political Communication & Management',
+                'school' => 'Copenhagen Business School'
+            ]),
+        ]);
+
+        $teamMember->skills()->saveMany([
+            Skill::firstWhere('name', 'creative strategist'),
+            Skill::firstWhere('name', 'project management'),
+        ]);
+
+        $teamMember->push();
+
+
+        // Michael
+        $teamMember = TeamMember::create([
+            'name' => 'Michael Valentin',
+            'job_title' => 'CEO, Partner & Digital Strategist',
+            'position' => 'Strategist',
+            'bio' => "Michael is a digital strategist with a heavy technical profile. For the past 10 years, he has worked with digital strategy, design, and development of everything from digital products, websites, e-commerce, and self-service solutions. He has a deep expertise in specification and architecture for larger digital systems, utilizing his deep insight into both business strategy, organization, and digital design to devise and execute solutions that deliver results, achieve support, and gain traction from both internal and external stakeholders.\nMichael holds a degree in Software Development from the IT-University of Copenhagen.\nHe was one of the key people behind projects like Maersk Line Container Sales, HelloSkin, and Rema1000.",
+            'years_with_signifly' => 10,
+            'phone' => '+45 2819 2966',
+            'email' => 'mv@signifly.com',
+            'profile_image' => '/images/profiles/michael_valentin.jpg'
+        ]);
+
+        $teamMember->education()->saveMany([
+            new Education([
+                'type' => 'Bachelor',
+                'subject' => 'Software Development',
+                'school' => 'IT-University Copenhagen'
+            ]),
+        ]);
+
+        $teamMember->skills()->saveMany([
+            Skill::firstWhere('name', 'digital strategist'),
+            Skill::firstWhere('name', 'digital design'),
+            Skill::firstWhere('name', 'digital development'),
+        ]);
+
+        $teamMember->push();
+
+        // Mads
+        $teamMember = TeamMember::create([
+            'name' => 'Mads Lindum',
+            'job_title' => 'Marketing & Branding Strategist',
+            'position' => 'Strategist',
+            'bio' => "Mads joined Signifly at the brink of 2019. Mads is a content & communications strategist and a specialist in digital brand communication. In order to create strategic and creative brand communication, he closely follows the current trends and developments in order to create the most innovative, effective, and creative solutions for our clients.\nMads holds a master’s in Brand & Communications Management from Copenhagen Business School.\nMads is a creative marketing & content strategist and a real data warrior that loves optimization and performance.",
+            'years_with_signifly' => 2,
+            'phone' => '+45 2818 5397',
+            'email' => 'ml@signifly.com',
+            'profile_image' => '/images/profiles/mads_lindum.jpg'
+        ]);
+
+        $teamMember->education()->saveMany([
+            new Education([
+                'type' => 'Bachelor',
+                'subject' => 'Brand & Communications Management',
+                'school' => 'Copenhagen Business School'
+            ]),
+            new Education([
+                'type' => 'Masters',
+                'subject' => 'Brand & Communications Management',
+                'school' => 'Copenhagen Business School'
+            ]),
+        ]);
+
+        $teamMember->skills()->saveMany([
+            Skill::firstWhere('name', 'content strategist'),
+            Skill::firstWhere('name', 'strategic communication'),
+            Skill::firstWhere('name', 'digital brand communication')
+        ]);
+
+        $teamMember->push();
+
+
+        // mathilde
+        $teamMember = TeamMember::create([
+            'name' => 'Mathilde Lundgreen',
+            'job_title' => 'Marketing Strategist',
+            'position' => 'Strategist',
+            'bio' => "Mathilde became an official Signifly’er in February 2020. She has a strategic and creative mind and is always looking for new and innovative ways of using digital products and marketing.\nMathilde holds a bachelor’s degree in Business Management and Marketing and a master’s in business administration and E-business at CBS. Coming from Miinto, she has vast communication and marketing knowledge within e-commerce and the fashion industry,y as well as a strong background in branding and content.\nBasically, Mathilde kicks ass at everything she does – except when in the kitchen – where countless of fires and meltdowns has occurred. Luckily, her marketing skills are always on fire.",
+            'years_with_signifly' => 1,
+            'phone' => '+45 81 92 89 73',
+            'email' => 'mlu@signifly.com',
+            'profile_image' => '/images/profiles/mathilde_lundgreen.jpg'
+        ]);
+
+        $teamMember->education()->saveMany([
+            new Education([
+                'type' => 'Bachelor',
+                'subject' => 'Business Management & Marketing',
+                'school' => 'Copenhagen Business School'
+            ]),
+            new Education([
+                'type' => 'Masters',
+                'subject' => 'Business Administration & E-business',
+                'school' => 'Copenhagen Business School'
+            ]),
+        ]);
+
+        $teamMember->skills()->saveMany([
+            Skill::firstWhere('name', 'content strategist'),
+            Skill::firstWhere('name', 'marketing'),
+            Skill::firstWhere('name', 'digital brand communication')
+        ]);
+
+        $teamMember->push();
+
+
+        // Ziad
+        $teamMember = TeamMember::create([
+            'name' => 'Ziad Soliman',
+            'job_title' => 'Digital Strategist',
+            'position' => 'Strategist',
+            'bio' => "Ziad joined the Canadian team in 2020 as a Digital Strategist. After previously working in B2B Digital Marketing, Ziad is now working with us on our Canadian marketing efforts as well as with assisting on client project planning and execution. When Ziad is not busy generating leads and awareness for Signifly, he is an avid reader and football fan.\nZiad holds a Postgraduate degree in Digital Marketing Management from the University of Toronto and a Bachelor of Marketing and International Business from Concordia University.",
+            'years_with_signifly' => 1,
+            'email' => 'zs@signifly.com',
+            'profile_image' => '/images/profiles/ziad_soliman.jpg'
+        ]);
+
+        $teamMember->education()->saveMany([
+            new Education([
+                'type' => 'Bachelor',
+                'subject' => 'Marketing & International Business',
+                'school' => 'Concordia University'
+            ]),
+            new Education([
+                'type' => 'Masters',
+                'subject' => 'Digital Marketing Management',
+                'school' => 'University of Toronto'
+            ]),
+        ]);
+
+        $teamMember->skills()->saveMany([
+            Skill::firstWhere('name', 'digital marketing'),
+            Skill::firstWhere('name', 'client communication'),
+        ]);
+
+        $teamMember->push();
+
+
+        // Thor
+        $teamMember = TeamMember::create([
+            'name' => 'Thor Tophoj',
+            'job_title' => 'Growth Consultant',
+            'position' => 'Strategist',
+            'bio' => "n February 2021, Thor Tophøj joined Signifly’s Copenhagen office as a Growth Consultant. He stands firmly at the intersection between product, sales, and marketing by leveraging experimentation, automation, and customer feedback to pinpoint use cases and customer segments. Before Signifly, Thor earned his stripes navigating the startup world as a Product Marketing Manager and Commercial Lead – and his passion for tech startups continues to be a source of inspiration.\nToday, he helps Signifly’s clientele leap-frog growth experiments, driving automations that result in commercial traction. His education (MSc) in Business and Communication from Copenhagen Business School and service as a naval sergeant give Thor a strong foundation of ambition and discipline, and this creative go-getter is constantly researching and developing better solutions that inspire impact.\nWhen Thor’s not at work, he’s likely chasing his son and daughter around the house, binge-watching American thriller series, playing traditional board games with friends (yes, the analog ones), figuring out how to make a good veggie burger, or running a few miles around Copenhagen’s many parks.",
+            'years_with_signifly' => 0,
+            'email' => 'tt@signifly.com',
+            'profile_image' => '/images/profiles/no_photo.jfif'
+        ]);
+
+        $teamMember->education()->saveMany([
+            new Education([
+                'type' => 'Bachelor',
+                'subject' => 'Business & Communication',
+                'school' => 'Copenhagen Business School'
+            ]),
+            new Education([
+                'type' => 'Masters',
+                'subject' => 'Business & Communication',
+                'school' => 'Copenhagen Business School'
+            ]),
+        ]);
+
+        $teamMember->skills()->saveMany([
+            Skill::firstWhere('name', 'startups'),
+            Skill::firstWhere('name', 'sales'),
+            Skill::firstWhere('name', 'marketing'),
+        ]);
+
+        $teamMember->push();
+
+
+        // Gabrielle
+        $teamMember = TeamMember::create([
+            'name' => 'Gabrielle Olivas',
+            'job_title' => 'Junior Content Strategist',
+            'position' => 'Strategist',
+            'bio' => "Gabrielle joined Signifly in October 2020 and today finds creative ways to deliver content as a Junior Content Strategist. She combines her passion for communication, hate for typos, and deep love of creative storytelling to create engaging, thoughtful copy for a variety of digital forms. Gabrielle leads with the belief that copy that connects combines deep consumer insights with nuanced, cultural understandings.\nOriginally coming from the entertainment and music industry, Gabrielle holds a master's in Management of Creative Business Processes from Copenhagen Business School and today helps enrich both Signifly and our clients through the written word.\nOutside the office, she still likes to flex her creative chops, and you can often find her strumming a guitar or singing like nobody's listening.",
+            'years_with_signifly' => 1,
+            'email' => 'go@signifly.com',
+            'profile_image' => '/images/profiles/no_photo.jfif'
+        ]);
+
+        $teamMember->education()->saveMany([
+            new Education([
+                'type' => 'Bachelor',
+                'subject' => 'Creative Business Processes',
+                'school' => 'Copenhagen Business School'
+            ]),
+            new Education([
+                'type' => 'Masters',
+                'subject' => 'Creative Business Processes',
+                'school' => 'Copenhagen Business School'
+            ]),
+        ]);
+
+        $teamMember->skills()->saveMany([
+            Skill::firstWhere('name', 'journalism'),
+            Skill::firstWhere('name', 'storytelling'),
+        ]);
+
+        $teamMember->push();
+
+
+        // Christian
+        $teamMember = TeamMember::create([
+            'name' => 'Christian Pind',
+            'job_title' => 'Junior Consultant',
+            'position' => 'Strategist',
+            'bio' => "Christian joined Signifly in February 2021 as a Junior Consultant in our Copenhagen office. Christian’s experience in entrepreneurship, finance, and technology well out-rank most of his peers, and his ambitions have taken him around the globe – including a stint in London, where he worked at a Venture Capital. Before Signifly, Christian also took a go at entrepreneurship, founding and then selling an accounting business, and his enthusiasm for finance continues to be a source of inspiration for his approach to optimization and the customer experience.\nToday, he still hasn’t slowed his pace. Alongside earning a BSc in International Business from CBS, Christian helps Signifly create strategic proposals, develop concrete communication products, and execute exciting, ambitious digital solutions. His experiences have given him a solid foundation in innovation and strategy, which he uses to enrich our ambitious, global clientele.\nWhen he’s not in the office, Christian is also an avid traveler with a strong curiosity for learning new languages. While he already has Danish, English, and Spanish checked off – he’s looking to add a new language to his repertoire.",
+            'years_with_signifly' => 0,
+            'email' => 'cp@signifly.com',
+            'profile_image' => '/images/profiles/no_photo.jfif'
+        ]);
+
+        $teamMember->education()->saveMany([
+            new Education([
+                'type' => 'Bachelor',
+                'subject' => 'International Business',
+                'school' => 'Copenhagen Business School'
+            ]),
+        ]);
+
+        $teamMember->skills()->saveMany([
+            Skill::firstWhere('name', 'strategic communication'),
+            Skill::firstWhere('name', 'digital development'),
+        ]);
+
+        $teamMember->push();
+
+
+        // Alexander
+        $teamMember = TeamMember::create([
+            'name' => 'Alexander Spliid',
+            'job_title' => 'Partner & Head of Design',
+            'position' => 'Design',
+            'bio' => "Alexander is a partner at Signifly and the visual cornerstone in our trio of founders. Being the Head of Design, Alexander is a versatile as they come. He has the ability to always think of the big picture when it comes to design, brand, and business. This enables him to constantly push the limits of how visual communication can influence behavior and build strong and honest brands.\nInitially self-taught, Alexander later leveled up with a bachelor’s degree in Visual Communication from DMJX. However, he started his design career way before that, freelancing at the early age of 16. Taking on every project he could get his hands on and slowly making a name for himself in the industry, before he, Michael, and Patrick started Signifly.\nYou can find Alexanders fingerprints on every single project, but notably the work done on the Visual Identity for Viking, Universe Trofæjagt, and the national rebranding of YX.",
+            'years_with_signifly' => 10,
+            'phone' => '+45 2276 5174',
+            'email' => 'as@signifly.com',
+            'profile_image' => '/images/profiles/alexander_spliid.jpg'
+        ]);
+
+        $teamMember->education()->saveMany([
+            new Education([
+                'type' => 'Bachelor',
+                'subject' => 'Visual Communication',
+                'school' => 'DMJX'
+            ]),
+        ]);
+
+        $teamMember->skills()->saveMany([
+            Skill::firstWhere('name', 'digital design'),
+            Skill::firstWhere('name', 'digital brand communication'),
+        ]);
+
+        $teamMember->push();
+
+
+        // soren
+        $teamMember = TeamMember::create([
+            'name' => 'Soren Shroder',
+            'job_title' => 'Design Team Lead',
+            'position' => 'Design',
+            'bio' => "Søren brought his 10+ years of agency experience to Signifly back in 2015. As a UX'er he seeks to solve complex issues through intuitive design and a deep understanding of and empathy for human behaviour.\nBefore starting at Signifly, Søren worked for various agencies. As well as being a designer, he has also held positions as a front-end developer and team lead in some of Denmark’s foremost agencies.\nOriginally holding a degree in multimedia design, he has added to his skillset in the agency world by working with real clients and projects, honing his craft along the way.\nSøren was lead designer on such prominent projects as Maersk Line, DR, Rema1000 and the Danish Road Directorate and coined the phrase 'Fizz'.",
+            'years_with_signifly' => 6,
+            'phone' => '+45 3170 0428',
+            'email' => 'ss@signifly.com',
+            'profile_image' => '/images/profiles/soren_schroder.jpg'
+        ]);
+
+        $teamMember->education()->saveMany([
+            new Education([
+                'type' => 'Bachelor',
+                'subject' => 'Multimedia Design',
+                'school' => 'Copenhagen Business School'
+            ]),
+        ]);
+
+        $teamMember->skills()->saveMany([
+            Skill::firstWhere('name', 'digital design'),
+            Skill::firstWhere('name', 'multimedia design'),
+            Skill::firstWhere('name', 'front-end development'),
+        ]);
+
+        $teamMember->push();
+
+
+        // Trine
+        $teamMember = TeamMember::create([
+            'name' => 'Trine Ronsholdt',
+            'job_title' => 'Interactive Designer',
+            'position' => 'Design',
+            'bio' => "Trine joined Signifly back in the late summer of 2015, starting out as an intern. A conceptual thinker and visual at heart, Trine thrives on creating coherent and straightforward communication – taking a complex message and delivering it through animation, design, and crystal-clear communication – always in the language, medium, and format that the audience understands.\nHolding a degree in multimedia design and a BA in Interactive Design, Trine blurs the lines of what a designer can do. Although animation is her strong suit, this hybrid creator also dabbles in heavy UX design, screenwriting and movie production, and print.\nTrine produced the concept and animation for a Recycling Pharma video for Leo Innovation Lab and Novo Nordisk and s design webshop and B2B platform for Stila.",
+            'years_with_signifly' => 6,
+            'phone' => '+45 2985 0740',
+            'email' => 'tr@signifly.com',
+            'profile_image' => '/images/profiles/trine_ronsholdt.jpg'
+        ]);
+
+        $teamMember->education()->saveMany([
+            new Education([
+                'type' => 'Bachelor',
+                'subject' => 'Multimedia Design',
+                'school' => 'Copenhagen Business School'
+            ]),
+            new Education([
+                'type' => 'Bachelor',
+                'subject' => 'Interactive Design',
+                'school' => 'Copenhagen Business School'
+            ]),
+        ]);
+
+        $teamMember->skills()->saveMany([
+            Skill::firstWhere('name', 'multimedia design'),
+            Skill::firstWhere('name', 'digital design'),
+        ]);
+
+        $teamMember->push();
+
+
+        // Martin
+        $teamMember = TeamMember::create([
+            'name' => 'Martin Balle',
+            'job_title' => 'Digital Designer',
+            'position' => 'Design',
+            'bio' => "Martin joined Signifly in 2017 and has been practicing his design magic ever since. He has a strong skillset within UI/UX design and excels at designing websites, apps, and user interfaces.\nBefore starting at Signifly, Martin had a multi-year stint as a freelancer and worked with various Danish start-ups.\nAs a self-taught designer, he holds no fancy degrees or diplomas, but make no mistake: his eye for detail and tech savvy are on point!\nMartin’s projects include the Maersk Container Sales platform, a startup editorial in Silicon Valley for the Foreign Ministry of Denmark, the new BII, and the upcoming release of the new 7-Eleven in Norway.",
+            'years_with_signifly' => 4,
+            'phone' => '+45 2893 7372',
+            'email' => 'mba@signifly.com',
+            'profile_image' => '/images/profiles/martin_balle.jpg'
+        ]);
+
+        $teamMember->skills()->saveMany([
+            Skill::firstWhere('name', 'digital design'),
+            Skill::firstWhere('name', 'startups'),
         ]);
 
         $teamMember->push();
     }
+
+
 }
