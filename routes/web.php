@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::get('/', function() {
-    return redirect()->route('project.index');
+    return redirect()->route('project.create');
 });
 Route::resource('project', 'ProjectController');
 Route::resource('team_member', 'TeamMemberController');

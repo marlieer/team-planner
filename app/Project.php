@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Log;
 
 class Project extends Model
 {
@@ -73,7 +74,8 @@ class Project extends Model
         // with Signifly requirement for the project
         // Then filter team members to get all candidates with one or more matching skill.
         // Then sort by number of skills matched
-        return TeamMember::where('years_with_signifly','>=', $this->minimum_years_with_signifly)->get()
+        Log::debug($this->minimum_years_with_signifly);
+        return TeamMember::where('years_with_signifly','>=', $this->minimum_years_with_signifly ?? 0)->get()
             ->reject( function ($candidate) {
                 return $this->teamMembers->pluck('id')->has($candidate->id);
             })

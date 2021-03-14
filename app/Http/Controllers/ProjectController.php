@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Education;
 use App\Http\Requests\StoreProject;
 use App\Project;
+use App\Skill;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Log;
 
 class ProjectController extends Controller
 {
@@ -26,7 +27,10 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        return view('project/create');
+        return view('project/create', [
+            'educations' => Education::all()->sortBy(['type', 'subject']),
+            'skills' => Skill::all()->sortBy('name'),
+        ]);
     }
 
     /**
@@ -37,6 +41,7 @@ class ProjectController extends Controller
      */
     public function store(StoreProject $request)
     {
+//        dd($request);
         $validated = $request->validated();
         Project::create($validated);
     }
