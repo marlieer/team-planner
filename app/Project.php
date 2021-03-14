@@ -68,17 +68,41 @@ class Project extends Model
 
 
     /**
+     * Get the educations of the team members on this project
+     */
+    public function getTeamEducation()
+    {
+        return $this->teamMembers->map(function ($team_member) {
+            return $team_member->education->map(function ($education) {
+                return $education;
+            });
+        })->flatten()->unique('id');
+    }
+
+
+    /**
+     * Get educations still needed to be met on this project by team members
+     */
+    public function getUnmetEducation()
+    {
+        return $this->education->whereNotIn(
+            'id', $this->getTeamEducation()->pluck('id')
+        );
+    }
+
+
+    /**
      * Get candidate team members qualified for this project
      */
     public function getCandidates()
     {
         $unmet_skills_ids = $this->getUnmetSkills()->pluck('id');
 
-        // Reject all candidates who are already part of the team or do not meet the minimum years
-        // with Signifly requirement for the project
-        // Then filter team members to get all candidates with one or more matching skill.
-        // Then sort by number of skills matched
-        Log::debug($this->minimum_years_with_signifly);
+        /* Reject all candidates who are already part of the team or do not meet the minimum years
+         with Signifly requirement for the project
+         Then filter team members to get all candidates with one or more matching skill.
+         Then sort by number of skills matched
+        */
         return TeamMember::where('years_with_signifly','>=', $this->minimum_years_with_signifly)->get()
             ->reject( function ($candidate) {
                 return $this->teamMembers->pluck('id')->has($candidate->id);
@@ -98,13 +122,13 @@ class Project extends Model
     public function assignTeamMembers()
     {
         // fill education requirements
-        if ($this->education) {
-            $this->education->each(function ($education) {
-                $this->teamMembers()->save(TeamMember::find($education->team_member_id));
-            });
+        while($this->getUnmetEducation()->isNotEmpty())
+        {
+            $this->teamMembers()->save(TeamMember::find($this->getUnmetEducation()->first()->team_member_id));
+            $this->refresh();
         }
 
-        // while there are still skills on this project that haven't been met
+        // fill skill requirements
         while($this->getUnmetSkills()->isNotEmpty() and $this->getCandidates()->isNotEmpty())
         {
             // take the candidate with the most matching skills and add to the project
