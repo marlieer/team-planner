@@ -25,7 +25,7 @@ class StoreProject extends FormRequest
     {
         return [
             'title' => 'string',
-            'description' => 'string',
+            'description' => 'string|nullable',
             'client' => 'string',
         ];
     }

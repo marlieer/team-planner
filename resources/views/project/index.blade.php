@@ -15,4 +15,7 @@
             </tr>
         @endforeach
     </table>
+    <div class="create-project">
+        <a href="{{route('project.create')}}" class="btn btn-success create-project-btn">Create New Project</a>
+    </div>
 @endsection

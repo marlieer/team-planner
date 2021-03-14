@@ -26,7 +26,7 @@
 <header>
     <!-- Top nav bar -->
     <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-        <a href="{{ route('project.index') }}" class="navbar-brand">Team Planner</a>
+        <a href="/" class="navbar-brand">Team Planner</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
                 aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -79,9 +79,6 @@
         </div>
     </div>
 </main>
-<div class="create-project">
-    <a href="{{route('project.create')}}" class="btn btn-success create-project-btn">Create New Project</a>
-</div>
 </body>
 </html>
 
