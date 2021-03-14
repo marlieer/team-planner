@@ -10,3 +10,7 @@
     left: 40%;
     width: 20%;
 }
+
+.container {
+    padding: 1.2em !important;
+}

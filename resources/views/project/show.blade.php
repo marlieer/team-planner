@@ -8,6 +8,36 @@
     </div>
 
     <div class="container">
+        <h3>Project Education Requirements</h3>
+        <div class="row">
+            @foreach($project->education as $education)
+                <div class="col-md col-sm-12 d-flex align-items-stretch">
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ $education->type . " of " . $education->subject }}</h5>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+        </div>
+    </div>
+
+    <div class="container">
+        <h3>Project Skill Requirements</h3>
+        <div class="row">
+            @foreach($project->skills as $skill)
+                <div class="col-md col-sm-12 d-flex align-items-stretch">
+                    <div class="card card-light" style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ $skill->name }}</h5>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+        </div>
+    </div>
+
+    <div class="container">
         <h3>Project Team Members</h3>
         <div class="row">
             @foreach($project->teamMembers as $team_member)
