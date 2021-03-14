@@ -42,18 +42,35 @@ class ProjectTest extends TestCase
      */
     public function testCreateProject()
     {
+        $this->seed();
+
         $project = [
             'title' => 'New Project',
             'description' => 'Testing new project',
             'client' => 'Disney',
+            'education_requirements' => [
+                6 => 'on',
+            ],
+            'skills' => [
+                3 => 'on',
+            ],
         ];
 
         $response = $this->post('/project', $project);
-        $response->assertStatus(200);
+
+        $response->assertStatus(302);
         $this->assertDatabaseHas('projects', [
             'title' => 'New Project',
             'description' => 'Testing new project',
             'client' => 'Disney',
+        ]);
+        $this->assertDatabaseHas('project_education', [
+            'project_id' => 2,
+            'education_id' => 6,
+        ]);
+        $this->assertDatabaseHas('project_skill', [
+            'project_id' => 2,
+            'skill_id' => 3,
         ]);
 
     }
@@ -145,7 +162,7 @@ class ProjectTest extends TestCase
         // assert that the education requirements of the project are met
         $this->assertDatabaseHas('project_team_member', [
             'project_id' => $project->id,
-            'team_member_id' => TeamMember::where('id', $project->education()->first()->team_member_id)->first()->id,
+            'team_member_id' => TeamMember::firstWhere('id', $project->education()->first()->team_member_id)->id,
         ]);
 
         // assert that the skill requirements of the project are met

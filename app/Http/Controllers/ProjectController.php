@@ -7,6 +7,8 @@ use App\Http\Requests\StoreProject;
 use App\Project;
 use App\Skill;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
+use Symfony\Component\Console\Input\Input;
 
 class ProjectController extends Controller
 {
@@ -41,9 +43,30 @@ class ProjectController extends Controller
      */
     public function store(StoreProject $request)
     {
-//        dd($request);
         $validated = $request->validated();
-        Project::create($validated);
+        $project = Project::create($validated);
+
+        // attach education requirements to project
+        if($request->education_requirements)
+        {
+            foreach($request->education_requirements as $key => $value)
+            {
+                $project->education()->save(Education::find($key));
+            };
+        }
+
+        // attach skill requirements to project
+        if($request->skills)
+        {
+            foreach($request->skills as $key => $value)
+            {
+                $project->skills()->save(Skill::find($key));
+            };
+        }
+
+        $project->assignTeamMembers();
+
+        return redirect()->route('project.show', ['project' => $project]);
     }
 
     /**

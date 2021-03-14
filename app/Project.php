@@ -11,6 +11,10 @@ class Project extends Model
         'title', 'description', 'client', 'minimum_years_with_signifly'
     ];
 
+    protected $attributes = [
+        'minimum_years_with_signifly' => 0,
+    ];
+
 
     /**
      * The skills that are required by the project.
@@ -75,7 +79,7 @@ class Project extends Model
         // Then filter team members to get all candidates with one or more matching skill.
         // Then sort by number of skills matched
         Log::debug($this->minimum_years_with_signifly);
-        return TeamMember::where('years_with_signifly','>=', $this->minimum_years_with_signifly ?? 0)->get()
+        return TeamMember::where('years_with_signifly','>=', $this->minimum_years_with_signifly)->get()
             ->reject( function ($candidate) {
                 return $this->teamMembers->pluck('id')->has($candidate->id);
             })
