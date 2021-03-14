@@ -42,10 +42,6 @@ class SkillSeeder extends Seeder
                 'category' => 'Consulting',
             ],
             [
-                'name' => 'project manager',
-                'category' => 'Innovation',
-            ],
-            [
                 'name' => 'repositioning',
                 'category' => 'Innovation',
             ],

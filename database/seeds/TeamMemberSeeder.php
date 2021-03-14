@@ -242,7 +242,7 @@ class TeamMemberSeeder extends Seeder
         $teamMember->skills()->saveMany([
             Skill::firstWhere('name', 'repositioning'),
             Skill::firstWhere('name', 'strategic communication'),
-            Skill::firstWhere('name', 'project manager'),
+            Skill::firstWhere('name', 'project management'),
         ]);
 
         $teamMember->push();
@@ -274,7 +274,7 @@ class TeamMemberSeeder extends Seeder
         ]);
 
         $teamMember->skills()->saveMany([
-            Skill::firstWhere('name', 'project manager'),
+            Skill::firstWhere('name', 'project management'),
             Skill::firstWhere('name', 'planning'),
         ]);
 
