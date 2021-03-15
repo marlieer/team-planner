@@ -46,7 +46,7 @@ class TeamMemberController extends Controller
      */
     public function show(TeamMember $teamMember)
     {
-        //
+        return view('teamMember/show', ['team_member' => $teamMember]);
     }
 
     /**
