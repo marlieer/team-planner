@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreTeamMember;
+use App\Skill;
 use App\TeamMember;
 use Illuminate\Http\Request;
 
@@ -24,7 +26,7 @@ class TeamMemberController extends Controller
      */
     public function create()
     {
-        //
+        return view('team_member.create', ['skills' => Skill::all()]);
     }
 
     /**
@@ -33,9 +35,9 @@ class TeamMemberController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreTeamMember $request)
     {
-        //
+        $validated = $request->validated();
     }
 
     /**
@@ -80,6 +82,7 @@ class TeamMemberController extends Controller
      */
     public function destroy(TeamMember $teamMember)
     {
-        //
+        TeamMember::destroy($teamMember->id);
+        return redirect()->route('team_member.index');
     }
 }
