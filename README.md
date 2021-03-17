@@ -4,6 +4,8 @@ By Marlie Dueck
 
 Team Planner is a simple app which allows the user to create a project requiring specific skills and competencies. The app performs a calculation to determine how good the fit is and suggests the best suited team members to join the project.
 
+A demo of this application can be found [here](https://team-planner-signifly.herokuapp.com).
+
 ### Steps Taken to Create the Project
 1. Create a Laravel project using composer.
 
