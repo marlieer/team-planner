@@ -86,7 +86,7 @@ class SkillSeeder extends Seeder
                 'category' => 'Tech',
             ],
             [
-                'name' => 'digital brand communication',
+                'name' => 'branding',
                 'category' => 'Design',
             ],
             [
@@ -100,7 +100,44 @@ class SkillSeeder extends Seeder
             [
                 'name' => 'client communication',
                 'category' => 'Strategy'
+            ],
+            [
+                'name' => 'data structures & algorithms',
+                'category' => 'Tech'
+            ],
+            [
+                'name' => 'back-end development',
+                'category' => 'Tech'
+            ],
+            [
+                'name' => 'tech project lead',
+                'category' => 'Tech'
+            ],
+            [
+                'name' => 'web development',
+                'category' => 'Tech',
+            ],
+            [
+                'name' => 'Electronics',
+                'category' => 'Tech'
+            ],
+            [
+                'name' => 'Laravel',
+                'category' => 'Tech'
+            ],
+            [
+                'name' => 'React',
+                'category' => 'Tech'
+            ],
+            [
+                'name' => 'concurrency',
+                'category' => 'Tech'
+            ],
+            [
+                'name' => 'web accessibility',
+                'category' => 'Tech'
             ]
+
 
         ]);
     }

@@ -480,7 +480,7 @@ class TeamMemberSeeder extends Seeder
         $teamMember->skills()->saveMany([
             Skill::firstWhere('name', 'content strategist'),
             Skill::firstWhere('name', 'strategic communication'),
-            Skill::firstWhere('name', 'digital brand communication')
+            Skill::firstWhere('name', 'branding')
         ]);
 
         $teamMember->push();
@@ -514,7 +514,7 @@ class TeamMemberSeeder extends Seeder
         $teamMember->skills()->saveMany([
             Skill::firstWhere('name', 'content strategist'),
             Skill::firstWhere('name', 'marketing'),
-            Skill::firstWhere('name', 'digital brand communication')
+            Skill::firstWhere('name', 'branding')
         ]);
 
         $teamMember->push();
@@ -666,7 +666,7 @@ class TeamMemberSeeder extends Seeder
 
         $teamMember->skills()->saveMany([
             Skill::firstWhere('name', 'digital design'),
-            Skill::firstWhere('name', 'digital brand communication'),
+            Skill::firstWhere('name', 'branding'),
         ]);
 
         $teamMember->push();
@@ -752,6 +752,260 @@ class TeamMemberSeeder extends Seeder
         ]);
 
         $teamMember->push();
+
+
+        // Alexandre
+        $teamMember = TeamMember::create([
+            'name' => 'Alexandre Lee',
+            'job_title' => 'Design Team Lead, Canada',
+            'position' => 'Design',
+            'bio' => "Alexandre joined Signifly in 2019 as a Digital Designer in our Montreal office. Before Signifly, he studied graphic design and even owned his own design agency.\nAlexandre is especially skilled in User Experience (UX), User Interface (UI), Logo Design, Branding & Identity, Corporate Design, and Entrepreneurship, as well as in Business Development. Today, these expertises allow him to deliver exceptional digital work for a wide range of projects.",
+            'years_with_signifly' => 2,
+            'email' => 'al@signifly.com',
+            'profile_image' => '/images/profiles/alexandre_lee.jpg'
+        ]);
+
+        $teamMember->skills()->saveMany([
+            Skill::firstWhere('name', 'digital design'),
+            Skill::firstWhere('name', 'branding'),
+            Skill::firstWhere('name', 'digital marketing'),
+        ]);
+
+        $teamMember->push();
+
+
+        // Kristoffer
+        $teamMember = TeamMember::create([
+            'name' => 'Kristoffer Balzer Nielsen',
+            'job_title' => 'Digital Designer',
+            'position' => 'Design',
+            'bio' => "Kristoffer joined the Signifly office in October 2019 as an UI/UX digital designer and immediately impressed us with his design magic.\nKristoffer currently holds a degree in Multimedia Design from KEA and has vast knowledge within interactive design. Despite his young age, he also carries serious experience in practicing the dark arts of UX/UI, digital design, motion graphics, and content creation.\nKristoffer is a true pixel pusher and has multiple tricks up his sleeve. Get ready to be impressed.",
+            'years_with_signifly' => 2,
+            'phone' => '+45 2685 5233',
+            'email' => 'kbn@signifly.com',
+            'profile_image' => '/images/profiles/kristoffer_balzer_nielsen.jpg'
+        ]);
+
+        $teamMember->education()->saveMany([
+            new Education([
+                'type' => 'Bachelor',
+                'subject' => 'Multimedia Design',
+                'school' => 'KEA'
+            ]),
+        ]);
+
+        $teamMember->skills()->saveMany([
+            Skill::firstWhere('name', 'digital design'),
+            Skill::firstWhere('name', 'multimedia design'),
+        ]);
+
+        $teamMember->push();
+
+
+        // Sasha
+        $teamMember = TeamMember::create([
+            'name' => 'Sasha Ng',
+            'job_title' => 'Digital Designer',
+            'position' => 'Design',
+            'bio' => "Sasha joined the Canadian team in March 2020 as an UI/UX design intern. After working in several digital agencies in her hometown Hong Kong for 5 years, she came to Montreal hoping to gain meaningful new experiences for her personal and professional development.\nShe is keen on creating engaging browsing experiences with the use of playful and meaningful modern-day interactivity, as well as solving problems with a creative and human-centred approach. With her extensive knowledge in front-end development, she has been helping out between the design and tech teams on various projects.\nA day-time designer and a night-time geek, Sasha has a strong interest in generative art and is a big fan of cinema, music, and languages.",
+            'years_with_signifly' => 1,
+            'email' => 'sng@signifly.com',
+            'profile_image' => '/images/profiles/sasha_ng.jpg'
+        ]);
+
+        $teamMember->skills()->saveMany([
+            Skill::firstWhere('name', 'digital design'),
+            Skill::firstWhere('name', 'front-end development'),
+        ]);
+
+        $teamMember->push();
+
+
+        // Mahendra Canaguy
+        $teamMember = TeamMember::create([
+            'name' => 'Mahendra Canaguy',
+            'job_title' => 'Digital Designer',
+            'position' => 'Design',
+            'bio' => "Mahendra joined Signifly in August 2020. With his background in UI and UX and an education in Graphic Design, he brings with him an expertise in developing strong user experiences. Self-motivated and goal-oriented, today, Mahendra thrives in developing engaging, thought-provoking work for a variety of clients.\nHowever, what you might not know is that outside the office, Mahendra is a car enthusiast. Everything from racecars to diecast cars to diaramas - Mahendra has a passion for the four-wheelers.",
+            'years_with_signifly' => 1,
+            'email' => 'mnc@signifly.com',
+            'profile_image' => '/images/profiles/mahendra_canaguy.jpg'
+        ]);
+
+        $teamMember->education()->saveMany([
+            new Education([
+                'type' => 'Bachelor',
+                'subject' => 'Graphic Design',
+                'school' => 'KEA'
+            ]),
+        ]);
+
+        $teamMember->skills()->saveMany([
+            Skill::firstWhere('name', 'digital design'),
+        ]);
+
+        $teamMember->push();
+
+
+        // Tore
+        $teamMember = TeamMember::create([
+            'name' => 'Tore Heimann',
+            'job_title' => 'Technical Team Lead',
+            'position' => 'Tech',
+            'bio' => "Tore and Signifly joined forces back in 2016. As Technical Team Lead, he ensures that our development projects run as smoothly and efficiently as possible.\nHe does all this while assisting our clients and advising them on technology and its possibilities. Being a former developer makes him the ideal link between tech and people, and he has a way of communicating the complex world of tech in a language everybody understands.\nBike mechanic turned Developer turned Technical Project Manager, Tore now holds the title as Technical Team Lead. With degrees in multimedia design and web development from KEA – Copenhagen School of Design and Technology, he front-ended at various companies like Unisport and Rosendahls before joining Signifly – while running his own website business and doing graphic work for smaller companies.\nTore was the Technical Project Manager on such prominent projects as Mads Nørgaard's Shopify solution, a webshop and B2B platform for Karmameju, and a PIM system for Sikane.",
+            'years_with_signifly' => 5,
+            'phone' => '+45 2620 9049',
+            'email' => 'th@signifly.com',
+            'profile_image' => '/images/profiles/tore_heimann.jpg'
+        ]);
+
+        $teamMember->education()->saveMany([
+            new Education([
+                'type' => 'Bachelor',
+                'subject' => 'Multimedia Design and Web Development',
+                'school' => 'KEA'
+            ]),
+        ]);
+
+        $teamMember->skills()->saveMany([
+            Skill::firstWhere('name', 'digital design'),
+            Skill::firstWhere('name', 'web development'),
+            Skill::firstWhere('name', 'tech project lead'),
+        ]);
+
+        $teamMember->push();
+
+
+        // Morten
+        $teamMember = TeamMember::create([
+            'name' => 'Morten Jensen',
+            'job_title' => 'CTO & Back-end Developer',
+            'position' => 'Tech',
+            'bio' => "Morten joined Signifly in 2017 as a back-end developer. Since then, he's headed our large-scale projects, focusing on data structure and algorithms, API development and integrating ERP systems, and he has also built our PIM system, hooking it up to our multi-shop solutions in Shopify.\nIn 2019, Morten took on the job as Signifly's CTO, taking charge of our technological capabilities world-wide and the technical quality of all the different solutions we deliver.\nSelf-taught and self-driven, Morten, previously ran his own software development house, Foreno, before doing a stint at Sofakompagniet and then ultimately becoming Signifly’s back-end backbone. As with any world-class backend developer, you know they've done a great job when their hand in the process is invisible. Their solutions just work. But Morten insists on being front and center with our clients, advising them throughout the project.\nMorten leads the development and architecture of projects like Maersk Container Sales, our own system multi-use administration framework Travy, and the ERP integration of many of our Shopify solutions, including our project for Mads Nørgaard.",
+            'years_with_signifly' => 4,
+            'phone' => '+45 4113 1537',
+            'email' => 'mpj@signifly.com',
+            'profile_image' => '/images/profiles/morten_jensen.jpg'
+        ]);
+
+        $teamMember->skills()->saveMany([
+            Skill::firstWhere('name', 'back-end development'),
+            Skill::firstWhere('name', 'data structures & algorithms'),
+        ]);
+
+        $teamMember->push();
+
+
+        // Ro Kleine Sonne
+        $teamMember = TeamMember::create([
+            'name' => 'Ro Kleine Sonne',
+            'job_title' => 'Back-end Developer',
+            'position' => 'Tech',
+            'bio' => "Ro joined Signifly March 2019 as a back-end developer. Before Signifly, he worked for a sharing economy app; today, he manipulates data and designs code to solve business problems and address stakeholder needs.\nHe holds a bachelor’s in Medialogy, which allows him to navigate and design modern media and technology, and his expertise in Laravel, React-Native, and Electronics helps him construct effective and efficient solutions for a variety of clients. The result is always clean design, and Ro has played a key part in Signifly’s FERMLiving, Klassik, and VardeOvne projects.\nWhen he’s not at his desk, this unofficial half-Brazilian, enjoys adventuring outdoors with his kids and playing soccer.",
+            'years_with_signifly' => 2,
+            'phone' => '+45 3066 0204',
+            'email' => 'ro@signifly.com',
+            'profile_image' => '/images/profiles/ro_kleine_sonne.jpg'
+        ]);
+
+        $teamMember->education()->saveMany([
+            new Education([
+                'type' => 'Bachelor',
+                'subject' => 'Medialogy',
+                'school' => 'KEA'
+            ]),
+        ]);
+
+        $teamMember->skills()->saveMany([
+            Skill::firstWhere('name', 'Laravel'),
+            Skill::firstWhere('name', 'React'),
+            Skill::firstWhere('name', 'Electronics'),
+            Skill::firstWhere('name', 'back-end development'),
+        ]);
+
+        $teamMember->push();
+
+
+        // Jaja
+        $teamMember = TeamMember::create([
+            'name' => 'Jaja Trytova',
+            'job_title' => 'Front-end developer',
+            'position' => 'Tech',
+            'bio' => "Jaja and Signifly joined forces March 2019 when she joined the tech team as a front-end developer. As a client-oriented team player, Jaja works tirelessly to build projects that serve our clients in the right way, not just the easy way.",
+            'years_with_signifly' => 2,
+            'phone' => '6066 3110',
+            'email' => 'ja@signifly.com',
+            'profile_image' => '/images/profiles/jaja_trytova.jpg'
+        ]);
+
+        $teamMember->skills()->saveMany([
+            Skill::firstWhere('name', 'front-end development'),
+        ]);
+
+        $teamMember->push();
+
+
+        // phillip
+        $teamMember = TeamMember::create([
+            'name' => 'Phillip Raffnsoe',
+            'job_title' => 'Full-stack developer',
+            'position' => 'Tech',
+            'bio' => "Phillip joined Signifly at the start of 2019 as a full-stack developer. He has degrees in Multimedia design from KEA and a BSc in Software Development from ITU, and he is especially experienced in frontend frameworks, web optimization, web accessibility, concurrency and real time web applications.\nA self-proclaimed nerd, Phillip enjoys delving into graphics programming and programming language theory in his spare time. But what he might not tell you, is that he has an uncanny ability to tell you the day of the week of nearly any date.",
+            'years_with_signifly' => 2,
+            'email' => 'pa@signifly.com',
+            'profile_image' => '/images/profiles/phillip_raffnsoe.jpg'
+        ]);
+
+        $teamMember->education()->saveMany([
+            new Education([
+                'type' => 'Bachelor',
+                'subject' => 'Multimeda design',
+                'school' => 'KEA'
+            ]),
+            new Education([
+                'type' => 'Bachelor',
+                'subject' => 'Software Development',
+                'school' => 'ITU'
+            ]),
+        ]);
+
+        $teamMember->skills()->saveMany([
+            Skill::firstWhere('name', 'front-end development'),
+            Skill::firstWhere('name', 'back-end development'),
+            Skill::firstWhere('name', 'web accessibility'),
+            Skill::firstWhere('name', 'concurrency'),
+        ]);
+
+        $teamMember->push();
+
+
+        // Marlie
+        $teamMember = TeamMember::create([
+            'name' => 'Marlie Dueck',
+            'job_title' => 'Back-end Developer',
+            'position' => 'Tech',
+            'bio' => "Marlie joined Signifly in March, 2021 as a back-end developer for the Canadian team. She graduated from the University of British Columbia with a Bsc in Computer Science and specialized in full-stack web development. Marlie has a passion for making business processes smoother and data more accessible. She is passionate about Laravel and smart use of algorithms\nIn her spare time, Marlie enjoys playing classical piano and bicycling everywhere. She is also an avid pasta lover, even going so far as to make her own noodles and raviolis from scratch!",
+            'years_with_signifly' => 0,
+            'email' => 'md@signifly.com',
+            'profile_image' => '/images/profiles/no_photo.jfif'
+        ]);
+
+        $teamMember->education()->saveMany([
+            new Education([
+                'type' => 'Bachelor',
+                'subject' => 'Computer Science',
+                'school' => 'UBC'
+            ]),
+        ]);
+
+        $teamMember->skills()->saveMany([
+            Skill::firstWhere('name', 'back-end development'),
+            Skill::firstWhere('name', 'data structures & algorithms'),
+            Skill::firstWhere('name', 'Laravel'),
+        ]);
+
+        $teamMember->push();
+
     }
 
 
