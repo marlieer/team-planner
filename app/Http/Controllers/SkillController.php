@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreSkill;
 use App\Skill;
 use Illuminate\Http\Request;
 
@@ -24,7 +25,7 @@ class SkillController extends Controller
      */
     public function create()
     {
-        //
+        return view('skill/create');
     }
 
     /**
@@ -33,9 +34,10 @@ class SkillController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreSkill $request)
     {
-        //
+        Skill::create($request->validated());
+        return redirect()->route('project.create');
     }
 
     /**
@@ -80,6 +82,7 @@ class SkillController extends Controller
      */
     public function destroy(Skill $skill)
     {
-        //
+        Skill::destroy($skill->id);
+        return redirect()->route('project.create');
     }
 }

@@ -41,6 +41,10 @@
                     <a href="{{ route('team_member.index') }}"
                        class="nav-link ">Signifly Team</a>
                 </li>
+                <li class="nav-item">
+                    <a href="{{ route('skill.create') }}"
+                       class="nav-link ">Add a Skill</a>
+                </li>
             </ul>
 
             <!--Right side of nav bar-->
