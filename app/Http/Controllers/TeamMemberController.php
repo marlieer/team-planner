@@ -41,7 +41,7 @@ class TeamMemberController extends Controller
         $validated = $request->validated();
         $extension = $validated['profile_image']->extension();
         $profile_image_path = $request->profile_image->storeAs('/images/profiles' , (str_replace(' ', '_', strtolower($request->name))) . '.' . $extension, 'public');
-        $validated['profile_image'] = '/storage/' .$profile_image_path;
+        $validated['profile_image'] = '/'.$profile_image_path;
         $team_member = TeamMember::create($validated);
 
         // attach skill requirements to project
