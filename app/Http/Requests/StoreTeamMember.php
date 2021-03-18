@@ -24,14 +24,16 @@ class StoreTeamMember extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'string',
+            'name' => 'string|max:60',
             'bio' => 'string',
-            'job_title' => 'string',
-            'position' => 'string',
-            'years_with_signifly' => 'date',
+            'job_title' => 'string|max:60',
+            'position' => 'in:Strategy,Consulting,Innovation,Tech,Design',
+            'years_with_signifly' => 'numeric',
             'phone' => 'string|nullable',
             'email' => 'email',
-            'profile_image' => 'string',
+            'profile_image' => 'file|mimes:jpg,png,jpeg',
+            'skills' => 'array|nullable',
+            'skills.*' => 'filled',
         ];
     }
 }

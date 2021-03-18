@@ -6,7 +6,7 @@
 
     <div class="row">
         <div class="col-md-5">
-            <img src="{{ $team_member->profile_image }}" alt="{{ $team_member->name . " profile image" }}"/>
+            <img src="{{ $team_member->profile_image }}" alt="{{ $team_member->name . " profile image" }}" width="390px"/>
         </div>
         <div class="col-md-5">
             <h5>{{ $team_member->job_title }}</h5>

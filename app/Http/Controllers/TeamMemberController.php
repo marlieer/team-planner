@@ -6,6 +6,7 @@ use App\Http\Requests\StoreTeamMember;
 use App\Skill;
 use App\TeamMember;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class TeamMemberController extends Controller
 {
@@ -26,7 +27,7 @@ class TeamMemberController extends Controller
      */
     public function create()
     {
-        return view('team_member.create', ['skills' => Skill::all()]);
+        return view('teamMember.create', ['skills' => Skill::all()]);
     }
 
     /**
@@ -38,6 +39,21 @@ class TeamMemberController extends Controller
     public function store(StoreTeamMember $request)
     {
         $validated = $request->validated();
+        $extension = $validated['profile_image']->extension();
+        $profile_image_path = $request->profile_image->storeAs('/images/profiles' , (str_replace(' ', '_', strtolower($request->name))) . '.' . $extension, 'public');
+        $validated['profile_image'] = '/storage/' .$profile_image_path;
+        $team_member = TeamMember::create($validated);
+
+        // attach skill requirements to project
+        if($request->skills)
+        {
+            foreach($request->skills as $key => $value)
+            {
+                $team_member->skills()->save(Skill::find($key));
+            };
+        }
+
+        return redirect()->route('team_member.show', ['team_member' => $team_member->id]);
     }
 
     /**

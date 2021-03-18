@@ -45,6 +45,10 @@
                     <a href="{{ route('skill.create') }}"
                        class="nav-link ">Add a Skill</a>
                 </li>
+                <li class="nav-item">
+                    <a href="{{ route('team_member.create') }}"
+                       class="nav-link ">Add a Team Member</a>
+                </li>
             </ul>
 
             <!--Right side of nav bar-->
